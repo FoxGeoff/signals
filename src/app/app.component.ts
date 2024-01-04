@@ -9,14 +9,17 @@ import { FormsModule } from '@angular/forms';
   imports: [CommonModule, RouterOutlet, FormsModule],
   template: `
       <h1>Shopping Cart</h1>
-    <select>
-      [ngModel] = "quantity()"
-      (ngModelChange) = "onQuantitySelected($event)">
+
+      <div>selected qty: {{quantity()}}</div>
+    <!-- REF: https://www.angularjswiki.com/angular/ngmodelchange-change-angular/ -->
+    <select [ngModel]="quantity()"
+       (ngModelChange) = "onQuantitySelected($event)">
+
       <option diabled value=""> --Select a quatity-- </option>
       <option *ngFor="let q of qtyAvailable()">{{q}}</option>
     </select>
 
-    <div>{{quantity()}}</div>
+    <br>
     <div>product: {{selectedProduct().name}}</div>
     <div>price: {{selectedProduct().price}}</div>
   `,
@@ -35,10 +38,12 @@ export class AppComponent {
   });
 
   constructor() {
-    console.log(`In constructor: ${this.quantity()}`) // requires ()
+    console.log(`In constructor: ${this.quantity()}`); // requires ()
   }
 
   onQuantitySelected(qty: number) {
+    this.quantity.set(qty);
+    console.log(`In onQuantitySelected: ${this.quantity()}`); // requires ()
 
   }
 }
