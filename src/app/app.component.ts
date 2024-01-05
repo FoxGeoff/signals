@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, effect, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -39,11 +39,22 @@ export class AppComponent {
 
   constructor() {
     console.log(`In constructor: ${this.quantity()}`); // requires ()
+
+    // Signals are not Observables, they will run immediately (update once)
+    effect(()=>console.log(`In effect: ${this.quantity()}`)) //run each time signal changes
+
+    this.quantity.update(q=> q*2);// runs only once
+
   }
 
   onQuantitySelected(qty: number) {
     this.quantity.set(qty);
     console.log(`In onQuantitySelected: ${this.quantity()}`); // requires ()
+    // only last value is updated in GUI
+    this.quantity.set(10);
+    this.quantity.set(20);
+    this.quantity.set(30);
+
 
   }
 }
