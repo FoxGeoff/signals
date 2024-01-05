@@ -51,9 +51,9 @@ export class AppComponent {
     this.quantity.set(qty);
     console.log(`In onQuantitySelected: ${this.quantity()}`); // requires ()
     // only last value is updated in GUI
-    this.quantity.set(10);
-    this.quantity.set(20);
-    this.quantity.set(30);
+    //this.quantity.set(10);
+    //this.quantity.set(20);
+    //this.quantity.set(30);
 
 
   }

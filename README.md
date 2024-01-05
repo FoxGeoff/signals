@@ -4,24 +4,32 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### REF <https://app.pluralsight.com/ilx/video-courses/51676108-c3a6-4a95-91e9-c52ec8aa0791/adee1db0-b573-4154-ab14-8642d960c594/dc204354-6d50-469c-9702-81fae08bb965>
 
-## Code scaffolding
+### Task: Computed Signals 10:6
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Computation = Signal of other Signals
 
-## Build
+### Task: Stop jumping to new line in VSCode
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1 Ref: <https://stackoverflow.com/questions/67243143/my-code-automatically-goes-to-another-line-in-vs-code-after-i-type-anything-how>
+2. insert_final_newline = true in an .editorconfig file at the root of my workspace. Make false
 
-## Running unit tests
+```typescript
+# Editor configuration, see https://editorconfig.org
+root = true
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+[*]
+charset = utf-8
+indent_style = space
+indent_size = 2
+insert_final_newline = false   //<= false
+trim_trailing_whitespace = true
 
-## Running end-to-end tests
+[*.ts]
+quote_type = single
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+[*.md]
+max_line_length = off
+trim_trailing_whitespace = false
+```
