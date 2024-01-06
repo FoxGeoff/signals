@@ -8,7 +8,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ### Task: Computed Signals 10:6
 
-1. Computation = Signal of other Signals
+1. Computation = Signal of other 'dependent'Signals
 
 ### Task: Stop jumping to new line in VSCode
 
